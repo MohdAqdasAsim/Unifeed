@@ -1,16 +1,18 @@
-import { LandingWrapper } from "../../hoc";
+import AppWrapper, { type WithConnectionProps } from "../../hoc/AppWrapper";
 
-const Dashboard = () => {
+const Dashboard: React.FC<WithConnectionProps> = ({ isConnected }) => {
   return (
-    <div className="w-full h-[70vh] flex flex-col items-center justify-center text-center bg-white/20 backdrop-blur-lg border border-white/30 rounded-3xl shadow-lg p-10">
-      <h2 className="text-4xl font-bold text-textColor mb-4">Dashboard</h2>
-      <p className="text-lg text-textColor/80">
-        The Unifeed dashboard is coming soon. Here you’ll be able to view
-        insights, track user feedback trends, and make data-informed decisions.
+    <div className="p-6">
+      <h1 className="text-2xl text-black font-bold">Dashboard</h1>
+      <p className="text-black">
+        Connection status:{" "}
+        <span className={isConnected ? "text-green-600" : "text-red-600"}>
+          {isConnected ? "Connected ✅" : "Disconnected ❌"}
+        </span>
       </p>
     </div>
   );
 };
 
-const WrappedDashboard = LandingWrapper(Dashboard);
-export default WrappedDashboard;
+const WrappedApp = AppWrapper(Dashboard, "Dashboard");
+export default WrappedApp;

@@ -1,8 +1,7 @@
-import { LandingWrapper } from "../../hoc";
+import React from "react";
 
 const Pricing = () => {
   return <div></div>;
 };
 
-const WrappedPricing = LandingWrapper(Pricing);
-export default WrappedPricing;
+export default Pricing;

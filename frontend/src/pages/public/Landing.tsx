@@ -1,14 +1,7 @@
-import { FeaturesSection, HeroSection } from "../../components";
-import { LandingWrapper } from "../../hoc";
+import React from "react";
 
 const Landing = () => {
-  return (
-    <>
-      <HeroSection />
-      <FeaturesSection />
-    </>
-  );
+  return <div></div>;
 };
 
-const WrappedLanding = LandingWrapper(Landing);
-export default WrappedLanding;
+export default Landing;

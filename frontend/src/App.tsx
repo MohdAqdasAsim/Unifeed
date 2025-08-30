@@ -1,26 +1,28 @@
 import { Route, Routes } from "react-router-dom";
-import { ProtectedRoute } from "./components";
 import {
-  Landing,
   About,
-  Docs,
-  Pricing,
-  Login,
-  Signup,
+  Collaboration,
   Dashboard,
-  Features,
+  FeedbackHub,
+  Help,
+  Landing,
+  Login,
   NotFound,
+  Pricing,
+  Profile,
+  Settings,
+  Signup,
+  Team,
 } from "./pages";
+import { ProtectedRoute } from "./components";
 
 function App() {
   return (
-    <section className="flex flex-col w-screen min-h-screen bg-gray-900">
+    <section className="w-screen min-h-screen bg-amber-400">
       <Routes>
         <Route index path="/" element={<Landing />} />
         <Route path="/about" element={<About />} />
         <Route path="/pricing" element={<Pricing />} />
-        <Route path="/docs" element={<Docs />} />
-        <Route path="/features" element={<Features />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
@@ -29,6 +31,54 @@ function App() {
           element={
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/feedback-hub"
+          element={
+            <ProtectedRoute>
+              <FeedbackHub />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/collaboration"
+          element={
+            <ProtectedRoute>
+              <Collaboration />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/team"
+          element={
+            <ProtectedRoute>
+              <Team />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <ProtectedRoute>
+              <Settings />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/help"
+          element={
+            <ProtectedRoute>
+              <Help />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
             </ProtectedRoute>
           }
         />
